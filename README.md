@@ -101,14 +101,14 @@ this will force `css-loader` to use default getter.
 **options.prefix**
 
 - Type: `string`
-- Default: ``
+- Default: `""`
 
 Character to prepend to each classname.
 
 **options.suffix**
 
 - Type: `string`
-- Default: ``
+- Default: `""`
 
 Character to append to each classname.
 
