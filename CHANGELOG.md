@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/xobotyi/css-loader-incremental-ident/compare/v1.1.0...v1.1.1) (2021-06-08)
+
+
+### Bug Fixes
+
+* improve docs ([37c780d](https://github.com/xobotyi/css-loader-incremental-ident/commit/37c780d4f93467dbb4b4772e9c27f2d2b70ae425))
+
 # [1.1.0](https://github.com/xobotyi/css-loader-incremental-ident/compare/v1.0.1...v1.1.0) (2021-06-08)
 
 
