@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/xobotyi/css-loader-incremental-ident/compare/v1.0.1...v1.1.0) (2021-06-08)
+
+
+### Features
+
+* `localIdentSeparator` option to separate resource and local ident ([47451d8](https://github.com/xobotyi/css-loader-incremental-ident/commit/47451d8d2d9e7c0e1968ea3a6b309a310ca0d7e5))
+
 ## [1.0.1](https://github.com/xobotyi/css-loader-incremental-ident/compare/v1.0.0...v1.0.1) (2021-06-08)
 
 
