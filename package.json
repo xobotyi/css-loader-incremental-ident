@@ -1,0 +1,95 @@
+{
+  "name": "css-loader-incremental-ident",
+  "version": "0.0.0",
+  "description": "Incremental classnames generator for webpack`s css-loader",
+  "keywords": [
+    "css",
+    "module",
+    "incremental",
+    "webpack",
+    "classnames",
+    "css-loader",
+    "ident",
+    "minify"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xobotyi/css-loader-incremental-ident.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xobotyi/css-loader-incremental-ident/issues"
+  },
+  "author": "Anton Zinovyev <xog3@yandex.ru>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "dependencies": {
+    "@types/node": "^15.12.2"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^12.1.1",
+    "@jamesacarr/eslint-formatter-github-actions": "^0.1.0",
+    "@jamesacarr/jest-reporter-github-actions": "^0.0.4",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.1",
+    "@types/jest": "^26.0.22",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "commitlint": "^12.1.4",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-mdx": "^1.13.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^4.3.8",
+    "jest": "^27.0.4",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.4.3",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2",
+    "yarn": "^1.22.10"
+  },
+  "scripts": {
+    "build": "yarn build:cleanup && yarn build:tsc",
+    "build:cleanup": "rimraf ./dist",
+    "build:tsc": "tsc -p tsconfig.build.json",
+    "test": "jest",
+    "test:coverage": "yarn test --coverage",
+    "lint": "eslint ./ --ext ts,js,md",
+    "lint:fix": "yarn lint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,mdx}": "eslint --fix"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  }
+}
