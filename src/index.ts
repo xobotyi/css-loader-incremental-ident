@@ -8,6 +8,7 @@ export interface LocalIdentGeneratorOptions {
   bypass?: boolean;
   prefix?: string;
   suffix?: string;
+  localIdentSeparator?: string;
 }
 
 export interface ContextLike {
@@ -25,9 +26,17 @@ type GetLocalIdent = (
 export function createLocalIdentGetter(
   opt: LocalIdentGeneratorOptions = {}
 ): GetLocalIdent | undefined {
-  if (opt.bypass) return undefined;
+  const {
+    bypass = false,
+    prefix = '',
+    suffix = '',
+    localIdentSeparator = '_',
+    alphabet = DEFAULT_ALPHABET,
+  } = opt;
 
-  const resourceIdGen = idgen(opt.alphabet ?? DEFAULT_ALPHABET);
+  if (bypass) return undefined;
+
+  const resourceIdGen = idgen(alphabet);
   const resources = new Map<
     string,
     { id: string; localIdGen: ReturnType<typeof idgen>; locals: Map<string, string> }
@@ -39,7 +48,7 @@ export function createLocalIdentGetter(
     if (!resource) {
       resource = {
         id: resourceIdGen(),
-        localIdGen: idgen(opt.alphabet ?? DEFAULT_ALPHABET),
+        localIdGen: idgen(alphabet),
         locals: new Map(),
       };
       resources.set(resourcePath, resource);
@@ -52,7 +61,7 @@ export function createLocalIdentGetter(
       resource.locals.set(localName, local);
     }
 
-    return `${opt.prefix}${resource.id}_${local}${opt.suffix}`;
+    return `${prefix}${resource.id}${localIdentSeparator}${local}${suffix}`;
   }
 
   return (
