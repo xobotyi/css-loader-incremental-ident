@@ -1,6 +1,6 @@
 {
   "name": "css-loader-incremental-ident",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Incremental classnames generator for webpack`s css-loader",
   "keywords": [
     "css",
