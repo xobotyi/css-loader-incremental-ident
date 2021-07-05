@@ -27,7 +27,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@types/node": "^15.12.2"
+    "@types/node": "^16.0.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^12.1.1",
